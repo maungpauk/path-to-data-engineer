@@ -41,70 +41,87 @@ Once you set this, Git will remember it for all your projects going forward.
 
 If you're working on an existing project hosted elsewhere—for example, on GitHub—you can bring it into your system using: 
 
-git clone 
-https://github.com/username/project.git
+```git
+git clone https://github.com/username/project.git
+```
 
-Here the “
-https://github.com/username/project.git ”
- is your git repository URL or in simple words, this is where your project work is on github.
+Here the “**https://github.com/username/project.git**” is your git repository URL or in simple words, this is where your project work is on github.
 
 This git clone command downloads the entire project, including the commit history, to a folder on your machine. 
 
 Let’s assume you've made changes to certain files. You will want to verify the current status of your project using: 
 
+```git
 git status 
+```
 
 This displays which files have been updated, which are staged (ready to be committed), and which remain untracked. 
 
 To add modifications to the staging area and prepare them for commit, use: 
 
+```git
 git add filename
+```
+
 
 You may also add everything with git add., which will stage all updated files. 
 
 Once your changes have been staged, you can generate a commit using: 
 
+```git
 git commit -m "added new feature" 
+```
 
 This commit works as a snapshot. Git saves your modifications with a message that explains what you did. 
 
 To view the history of commits made thus far, use: 
 
+```git
 git log 
+```
 
 You'll see a list of commits, each with a unique ID, timestamp, author, and message. This is your project's timeline. 
 
-Working With Branches 
+### Working With Branches 
+
 Branches allow you to work on different features or fixes separately without affecting your main code. You can create a new branch using: 
 
+```git
 git branch:new-feature
+```
 
 This creates a new branch but does not switch to it immediately. To actually get to that branch, use: 
 
+```git
 git checkout new-feature
+```
 
 You will be then working in the new-feature branch. Changes made here will not affect your main branch (commonly referred to as main or master) or any other branch unless you explicitly merge them. 
 
 Merge your feature branch back into main: 
 In order to merge your branches together first you will switch to that branch where you want to merge your other branch and then perform the follwing
 
+```git
 git checkout main     --- this will switch you to your main branch
-
 git merge new-feature --- this will merge the feature branch with the main branch
+```
 
 If everything goes smoothly, Git will integrate the changes automatically. If there are conflicting modifications, you must reconcile them manually. This scenario where conflicts occur is known as merge conflict. 
 
 Once the branch has been merged and you no longer require it, you can delete it using: 
 
+```git
 git branch -d new-feature   ---- here new-feature is our branch name
+```
 
 This helps to keep your branch list tidy. 
 
 Working with remote repositories 
 To interact with others or simply backup your project online, you must connect your local repository to a remote one. To accomplish this, use: 
 
-git remote add origin 
-https://github.com/username/project.git
+```git
+git remote add origin https://github.com/username/project.git
+```
 
 Now, your local Git knows where to submit and receive changes. To verify the remote, you can use the command: 
 
@@ -114,36 +131,48 @@ git remote -v
 
 To push your local commits to the remote repository: 
 
+```git
 git push origin main   ----- to push a branch other than main just replace your branch name with “main” present in this command
+```
 
 This updates the remote repo's main branch with your most recent changes. 
 
 To download fresh changes from the remote repository onto your local system, use: 
 
+```git
 git pull
+```
 
 Other useful Git commands
 Sometimes you want to temporarily save your modifications before committing them. Perhaps you're switching to or just looking into a different branch. This is where git stash comes in. 
 
+```git
 git stash 
+```
 
 This makes sure that your unfinished work does not appear in any branch and stays hidden.
 
 Later, when you're ready to resume your work you can use the command: 
 
+```git
 git stash pop 
+```
 
 This reapplies the changes to your working directory brining your file back from the hiding. 
 
 Now, to receive the most recent changes from the remote without merging automatically, use: 
 
+```git
 git fetch 
+```
 
 This updates your local knowledge of the distant repository but has no effect on your current files until you merge it. 
 
 Finally, if you want to know what specifically changed between two versions or what has changed in your working directory, use: 
 
+```git
 git diff 
+```
 
 This displays a line-by-line comparison, showing additions and deletions. 
 
