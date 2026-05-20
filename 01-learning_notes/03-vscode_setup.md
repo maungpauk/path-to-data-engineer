@@ -36,6 +36,7 @@ When VS Code is opened, click extensions icon in the left-hand side or Ctrl+Shif
 
 Then press `F1` and type `>WSL: Connect to wsl` in **Quick Access** bar and click to connect.
 
+**Done !**
 
 ---
 
