@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img width="100%" src="/images/linux_penguin.png" alt="linux penguin">
+  <img width="30%" src="/images/linux_penguin.png" alt="linux penguin">
 </p>
 
 <h3 align="center">
